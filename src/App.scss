@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+
+html{
+  background-color: #282c34;
+  display: flex;
+  color: white;
+  justify-content: center;
+  .container{
+    background-color: #282c34;
+    color: white;
+  }
+  a {
+    color: #61dafb;
+  }
+}

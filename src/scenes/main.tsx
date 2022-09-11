@@ -1,11 +1,7 @@
 import React from 'react'
-
-
-import '../App.css';
 import {  useQuery } from '@apollo/client';
 import { Image, Spinner } from 'react-bootstrap';
 import { AllPokemonsData, GET_ALL_POKEMONS, AllPokemonsVars } from '../api';
-
 
 
 const MAX_POKEMONS = 151
@@ -55,8 +51,16 @@ export const Main: React.FC<MainProps> = props => {
             {
                 data &&
                 <>
-                    <div className="App">
-                        <header className="App-header">
+                    <div className='container text-center'>
+
+                    
+                        <div className='row'>
+                        <div className='col-1'>
+
+                            <label onClick={ () => number!==0 && setNumber(number-1)} style={{"cursor": "pointer"}}> {"<--"} </label>
+
+                        </div>
+                        <div className='col-10'>
                             <Image src={data.pokemons[number].image}/>
                             <h1>{data.pokemons[number].name}</h1>
                             <ul>
@@ -74,14 +78,18 @@ export const Main: React.FC<MainProps> = props => {
                                 </li>
                             </ul>
                             <div className='d-flex justify-content-between'>
-                                <label onClick={ () => number!==0 && setNumber(number-1)} style={{"cursor": "pointer"}}> {"<--       "} </label>
-                                <label onClick={ () => number!==MAX_POKEMONS-1 && setNumber(number+1)} style={{"cursor": "pointer"}}> {"      -->"}</label>
+                                
+                                
                             </div>
                             <div className='d-flex justify-content-center'>
                                 <input type="text" onChange={(e) => setNombre(e.target.value)}/>
                             </div>
-                        </header>
+                        </div>
+                        <div className='col-1'>
+                            <label onClick={ () => number!==MAX_POKEMONS-1 && setNumber(number+1)} style={{"cursor": "pointer"}}> {"-->"}</label>
+                        </div>
                     </div>
+                    </div> 
                 </>
             }
             
