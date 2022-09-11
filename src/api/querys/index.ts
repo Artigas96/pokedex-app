@@ -1,1 +1,2 @@
-export * from './all-pokemons'
+export * from './pokemon'
+export * from './digimon'
