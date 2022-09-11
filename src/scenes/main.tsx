@@ -1,129 +1,10 @@
 import React from 'react'
 
 
-import logo from '../logo.svg';
 import '../App.css';
-import { gql, useQuery } from '@apollo/client';
-import { FormLabel, Image, Spinner } from 'react-bootstrap';
-
-
-
-export const ALL_POKEMONS = gql`
-    fragment AllPokemons on Pokemon {
-      id
-      number
-      name
-      weight {
-        minimum
-        maximum
-      }
-      height {
-        minimum
-        maximum
-      }
-      classification
-      types
-      resistant
-      weaknesses
-      fleeRate
-      maxCP
-      maxHP
-      image
-    }
-`
-
-export const GET_ALL_POKEMONS = gql`
-    ${ALL_POKEMONS}
-    query pokemons($first: Int!) {
-      pokemons(first: $first){
-        ...AllPokemons
-      }
-    }
-`
-
-
-
-export interface Pokemon{
-    id: number
-    number: string
-    name: string
-    weight: PokemonDimension
-    height: PokemonDimension
-    classification: string
-    types: string[]
-    resistant:string[]
-    attacks: PokemonAttack
-    weaknesses: string[]
-    fleeRate: number
-    maxCP: number
-    evolutions: Pokemon[]
-    evolutionRequirements: PokemonEvolutionRequirement
-    maxHP: number
-    image: string
-}
-
-export interface PokemonDimension{
-    minimum: string
-    maximum: string
-}
-
-export interface PokemonAttack {
-    fast: Attack []
-    special: Attack []
-}
-
-export interface Attack {
-    name: string
-    type: string
-    damage: number
-}
-
-export interface PokemonEvolutionRequirement{
-    amount: number
-    name: string
-}
-
-export interface AllPokemonsData {
-  pokemons : Pokemon[]
-}
-
-
-export interface AllPokemonsVars {
-  first : number
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import {  useQuery } from '@apollo/client';
+import { Image, Spinner } from 'react-bootstrap';
+import { AllPokemonsData, GET_ALL_POKEMONS, AllPokemonsVars } from '../api';
 
 
 
@@ -197,7 +78,7 @@ export const Main: React.FC<MainProps> = props => {
                                 <label onClick={ () => number!==MAX_POKEMONS-1 && setNumber(number+1)} style={{"cursor": "pointer"}}> {"      -->"}</label>
                             </div>
                             <div className='d-flex justify-content-center'>
-                                <input onChange={(input)=> setNombre(input.target.value)} type="text" />
+                                <input type="text" onChange={(e) => setNombre(e.target.value)}/>
                             </div>
                         </header>
                     </div>
