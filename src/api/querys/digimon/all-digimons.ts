@@ -1,6 +1,6 @@
 import { gql, LazyQueryHookOptions, useLazyQuery, useQuery } from "@apollo/client";
-import { Digimon } from './../../../types';
-import { ALL_DIGIMON } from "../../fragments";
+import { ALL_DIGIMON } from "api/fragments";
+import { Digimon } from 'types';
 
 
 export const GET_ALL_DIGIMONS = gql`

@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client'
 import React from 'react'
 import { Spinner } from 'react-bootstrap'
-import { AllDigimonData, AllDigimonVars, GET_ALL_DIGIMONS } from '../../api'
+import { AllDigimonData, AllDigimonVars, GET_ALL_DIGIMONS } from 'api'
 
 
 

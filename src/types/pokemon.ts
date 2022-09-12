@@ -7,7 +7,7 @@ export interface Pokemon{
     weight: PokemonDimension
     height: PokemonDimension
     classification: string
-    types: string[]
+    types: PokemonType[]
     resistant:string[]
     attacks: PokemonAttack
     weaknesses: string[]
@@ -39,3 +39,24 @@ export interface PokemonEvolutionRequirement{
     amount: number
     name: string
 }
+
+export enum PokemonType {
+    Bug = "Bug",
+    Dark = "Dark",
+    Dragon = "Dragon",
+    Electric = "Electric",
+    Fairy = "Fairy",
+    Fighting = "Fighting",
+    Fire = "Fire",
+    Flying = "Flying",
+    Ghost = "Ghost",
+    Grass = "Grass",
+    Ground = "Ground",
+    Ice = "Ice",
+    Normal = "Normal",
+    Poison = "Poison",
+    Psychic = "Psychic",
+    Rock = "Rock",
+    Steel = "Steel",
+    Water = "Water",
+   }

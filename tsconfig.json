@@ -1,10 +1,38 @@
 {
-    "extends": "@tsconfig/node14/tsconfig.json",
-    "compilerOptions": {
-      "preserveConstEnums": true,
-      "jsx": "react",
-      "lib": ["DOM","dom.iterable","esnext"]
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts", "tstypes.d.ts"]
-  }
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "allowJs": true,
+    "lib": [
+      "DOM"
+    ],
+    "baseUrl": "./src/",
+    "paths": {
+      "scenes": [
+        "scenes"
+      ],
+      "api": [
+        "api"
+      ],
+      "components": [
+        "components"
+      ],
+      "pods": [
+        "pods"
+      ],
+      "types": [
+        "types"
+      ],
+    }
+  },
+  "include": [
+    "src/**/*",
+    "tstypes.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

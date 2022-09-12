@@ -1,6 +1,6 @@
 import { gql, LazyQueryHookOptions, useLazyQuery, useQuery } from "@apollo/client";
-import { Pokemon } from "../../../types";
-import { ALL_POKEMONS } from "../../fragments";
+import { Pokemon } from "types";
+import { ALL_POKEMONS } from "api/fragments";
 
 
 export const GET_ALL_POKEMONS = gql`

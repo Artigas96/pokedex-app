@@ -4,7 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { PokemonsScene } from './pokemon'
 import { DigimonScene } from './digimon'
 import { SelectorScene } from './selector'
-import { NavBar } from '../components/navbar'
+import { NavBar } from 'components/navbar'
 
 
 
