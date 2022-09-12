@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql, LazyQueryHookOptions, useLazyQuery, useQuery } from "@apollo/client";
 import { Digimon } from './../../../types';
 import { ALL_DIGIMON } from "../../fragments";
 
@@ -21,4 +21,20 @@ export interface AllDigimonVars {
   
 }
 
-
+export const useQueryGetAllPokemons = (options?: LazyQueryHookOptions<AllDigimonData, AllDigimonVars>) => {
+  return useQuery<AllDigimonData, AllDigimonVars>(
+    GET_ALL_DIGIMONS,
+    options ?? {
+      errorPolicy: 'ignore',
+    }
+  )
+}
+// No se usa
+export const useLazyQueryGetAllPokemons = (options?: LazyQueryHookOptions<AllDigimonData, AllDigimonVars>) => {
+  return useLazyQuery<AllDigimonData, AllDigimonVars>(
+    GET_ALL_DIGIMONS,
+    options ?? {
+      errorPolicy: 'ignore',
+    }
+  )
+}
