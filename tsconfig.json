@@ -3,8 +3,8 @@
     "compilerOptions": {
       "preserveConstEnums": true,
       "jsx": "react",
-      "lib": ["DOM"]
+      "lib": ["DOM","dom.iterable","esnext"]
     },
     "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
+    "exclude": ["node_modules", "**/*.spec.ts", "tstypes.d.ts"]
   }
