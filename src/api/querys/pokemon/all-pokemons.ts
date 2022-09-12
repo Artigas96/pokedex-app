@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, LazyQueryHookOptions, useLazyQuery, useQuery } from "@apollo/client";
 import { Pokemon } from "../../../types";
 import { ALL_POKEMONS } from "../../fragments";
 
@@ -31,7 +31,7 @@ export const useQueryGetAllPokemons = (options?: LazyQueryHookOptions<AllPokemon
   )
 }
 // No se usa
-export const useLazyQueryGetAllPokemons = (options?: LazyQueryHookOptions<GetStateTreeData, AllPokemonsVars>) => {
+export const useLazyQueryGetAllPokemons = (options?: LazyQueryHookOptions<AllPokemonsData, AllPokemonsVars>) => {
   return useLazyQuery<AllPokemonsData, AllPokemonsVars>(
     GET_ALL_POKEMONS,
     options ?? {

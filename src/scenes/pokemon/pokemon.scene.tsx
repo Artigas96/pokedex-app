@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { Spinner } from 'react-bootstrap';
-import { AllPokemonsData, AllPokemonsVars, GET_ALL_POKEMONS } from '../../api';
+import { useQueryGetAllPokemons } from '../../api';
 
 const MAX_POKEMONS = 151
 
@@ -11,10 +11,7 @@ interface PokemonsSceneProps{
 
 export const PokemonsScene: React.FC<PokemonsSceneProps> = props => {
 
-    const {data, loading, error} = useQuery<AllPokemonsData, AllPokemonsVars>(
-        GET_ALL_POKEMONS,
-        {variables: {first: MAX_POKEMONS}}
-    )
+    const {data, loading, error} = useQueryGetAllPokemons({variables:{first:MAX_POKEMONS}})
     
     const [number, setNumber] = React.useState<number>(0)
     const [nombre, setNombre] = React.useState<string>("")
