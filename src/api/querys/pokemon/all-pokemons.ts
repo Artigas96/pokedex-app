@@ -22,3 +22,20 @@ export interface AllPokemonsVars {
 }
 
 
+export const useQueryGetAllPokemons = (options?: LazyQueryHookOptions<AllPokemonsData, AllPokemonsVars>) => {
+  return useQuery<AllPokemonsData, AllPokemonsVars>(
+    GET_ALL_POKEMONS,
+    options ?? {
+      errorPolicy: 'ignore',
+    }
+  )
+}
+// No se usa
+export const useLazyQueryGetAllPokemons = (options?: LazyQueryHookOptions<GetStateTreeData, AllPokemonsVars>) => {
+  return useLazyQuery<AllPokemonsData, AllPokemonsVars>(
+    GET_ALL_POKEMONS,
+    options ?? {
+      errorPolicy: 'ignore',
+    }
+  )
+}
