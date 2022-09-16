@@ -11,9 +11,9 @@ export const PokemonsScene: React.FC<PokemonsSceneProps> = props => {
 
 
 
-    return (
-        <>
-            <PokemonContainer maxPokemons={MAX_POKEMONS} />
-        </>
-    )
+  return (
+    <>
+      <PokemonContainer maxPokemons={MAX_POKEMONS} />
+    </>
+  )
 }
