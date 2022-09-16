@@ -21,7 +21,7 @@ export interface AllDigimonVars {
   
 }
 
-export const useQueryGetAllPokemons = (options?: LazyQueryHookOptions<AllDigimonData, AllDigimonVars>) => {
+export const useQueryGetAllDigimon = (options?: LazyQueryHookOptions<AllDigimonData, AllDigimonVars>) => {
   return useQuery<AllDigimonData, AllDigimonVars>(
     GET_ALL_DIGIMONS,
     options ?? {
@@ -30,7 +30,7 @@ export const useQueryGetAllPokemons = (options?: LazyQueryHookOptions<AllDigimon
   )
 }
 // No se usa
-export const useLazyQueryGetAllPokemons = (options?: LazyQueryHookOptions<AllDigimonData, AllDigimonVars>) => {
+export const useLazyQueryGetAllDigimon = (options?: LazyQueryHookOptions<AllDigimonData, AllDigimonVars>) => {
   return useLazyQuery<AllDigimonData, AllDigimonVars>(
     GET_ALL_DIGIMONS,
     options ?? {
